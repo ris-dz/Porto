@@ -1,0 +1,354 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (Pengaturan Dasar)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    line-height: 1.6;
+}
+
+span {
+    color: #007bff; /* Warna aksen biru utama */
+}
+
+/* ==========================================================================
+   2. NAVBAR (Navigasi Atas)
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+nav ul li .btn-kontak {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+nav ul li .btn-kontak:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Sapaan Utama)
+   ========================================================================== */
+header {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background: #ffffff;
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content h5 {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.cta-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #111;
+    color: white;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #007bff;
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: #111;
+    border: 2px solid #111;
+}
+
+.cta-btn.secondary:hover {
+    background-color: #111;
+    color: white;
+}
+
+/* ==========================================================================
+   4. SECTION UTAMA (Keahlian & Proyek)
+   ========================================================================== */
+.section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* KEAHLIAN / SKILLS */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-card {
+    background-color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    color: #555;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Indikator Warna Spesifik Jurusan Faris */
+.skill-card.networking {
+    border-left: 5px solid #2ecc71; /* Hijau untuk TJKT/Jaringan */
+}
+
+.skill-card.webdev {
+    border-left: 5px solid #007bff; /* Biru untuk Web Developer */
+}
+
+/* PROYEK / PORTFOLIO GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-img {
+    height: 180px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #111;
+}
+
+.project-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tech-used {
+    margin-bottom: 20px;
+}
+
+.tech-used span {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.project-link:hover {
+    color: #0056b3;
+}
+
+/* ==========================================================================
+   5. FOOTER & KONTAK
+   ========================================================================== */
+footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 60px 8% 20px;
+}
+
+footer h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.kontak-links {
+    margin-bottom: 40px;
+}
+
+.kontak-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+.kontak-links a:hover {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #555 !important;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Biar pas di HP)
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav { 
+        padding: 15px 5%; 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    nav ul { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+    nav ul li { 
+        margin: 5px 10px; 
+    }
+    header { 
+        padding: 60px 5%; 
+        text-align: center; 
+    }
+    .hero-content h1 { 
+        font-size: 36px; 
+    }
+    .hero-content h2 { 
+        font-size: 20px; 
+    }
+    .cta-btn { 
+        margin-bottom: 15px; 
+        width: 100%; 
+        margin-right: 0; 
+    }
+}
+
+/* Efek Animasi Muncul */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
