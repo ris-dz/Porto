@@ -82,36 +82,35 @@
         }
 
         /* ==========================================================================
-           3. HERO SECTION (Foto Polos Samping Kanan)
+           3. HERO SECTION (Optimasi Ukuran Foto Pasfoto Formal)
            ========================================================================== */
         header {
-            min-height: 80vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 8%;
+            padding: 40px 8%;
             background: #ffffff;
-            gap: 40px;
+            gap: 50px;
             overflow: hidden;
         }
 
         .hero-content {
             flex: 1;
             animation: fadeIn 1s ease-in-out;
-            padding-right: 20px;
         }
 
         .hero-content h5 {
-            font-size: 18px;
+            font-size: 16px;
             color: #2ecc71;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .hero-content h1 {
-            font-size: 52px;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 15px;
             color: #111;
@@ -119,21 +118,22 @@
         }
 
         .hero-content h2 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 400;
             color: #555;
             margin-bottom: 25px;
         }
 
         .hero-content p {
-            font-size: 16px;
-            color: #777;
+            font-size: 15px;
+            color: #666;
             margin-bottom: 35px;
             max-width: 600px;
         }
 
+        /* AREA ADJUSTMENT: Membuat frame foto lebih kecil & proposional */
         .hero-image {
-            flex: 0 0 400px;
+            flex: 0 0 300px; /* Ukuran lebar maksimal area foto dikunci di 300px */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -141,8 +141,16 @@
 
         .hero-image img {
             width: 100%;
-            max-height: 70vh;
-            object-fit: contain;
+            height: auto;
+            max-height: 400px; /* Batasi tinggi pasfoto agar tidak memanjang kebawah */
+            object-fit: cover;
+            border-radius: 12px; /* Membuat sudut pasfoto sedikit membulat rapi */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Efek bayangan elegan di mata HRD */
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02); /* Sedikit interaksi interaktif saat kursor di atas foto */
         }
 
         .cta-btn {
@@ -150,10 +158,11 @@
             text-decoration: none;
             background-color: #111;
             color: white;
-            padding: 14px 32px;
+            padding: 12px 28px;
             font-weight: 600;
             border-radius: 5px;
             margin-right: 15px;
+            font-size: 15px;
             transition: 0.3s;
         }
 
@@ -350,7 +359,7 @@
         }
 
         /* ==========================================================================
-           8. FOOTER & KONTAK (Update: Hanya Email dan Instagram)
+           8. FOOTER & KONTAK
            ========================================================================== */
         footer {
             background-color: #111111;
@@ -398,26 +407,23 @@
             header {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding: 50px 5% 20px;
-                gap: 20px;
+                padding: 50px 5% 40px;
+                gap: 30px;
             }
             .hero-image {
                 flex: none;
                 width: 100%;
-                max-width: 250px;
+                max-width: 220px; /* Lebih kecil lagi kalau dibuka di HP */
             }
-            .hero-image img {
-                max-height: 40vh;
-            }
-            .hero-content {
-                padding-right: 0;
+            .hero-content h1 {
+                font-size: 38px;
             }
         }
 
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 10px; }
             nav ul { flex-wrap: wrap; justify-content: center; }
-            .hero-content h1 { font-size: 36px; }
+            .hero-content h1 { font-size: 32px; }
             .cta-btn { width: 100%; margin-bottom: 10px; margin-right: 0; }
         }
 
@@ -429,6 +435,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
         <div class="logo">Faris<span>Dzakiyya</span></div>
         <ul>
@@ -440,6 +447,7 @@
         </ul>
     </nav>
 
+    <!-- HERO SECTION -->
     <header id="tentang">
         <div class="hero-content">
             <h5>Halo, Nama Saya</h5>
@@ -447,14 +455,16 @@
             <h2>Siswa SMK Jurusan <span>TJKT</span> | IT Networking Specialist.</h2>
             <p>Berfokus pada infrastruktur jaringan, administrasi server, dan konfigurasi perangkat jaringan. Siap membawa dedikasi tinggi dan kemampuan teknis nyata untuk industri.</p>
             <a href="#proyek" class="cta-btn">Lihat Laporan Praktikum</a>
-            <a href="CV/CV_Faris_Dzakiyya.jpg" target="_blank" class="cta-btn secondary">Unduh CV / Resume</a>
+            <a href="CV/CV_Faris_Dzakiyya.pdf" target="_blank" class="cta-btn secondary">Unduh CV / Resume</a>
         </div>
 
+        <!-- Sisi Foto yang Sudah Diperkecil & Diberi Border Radius Efek -->
         <div class="hero-image">
             <img src="CV/Faris Dzakiyya.jpg" alt="Foto Faris Dzakiyya">
         </div>
     </header>
 
+    <!-- KEAHLIAN SECTION -->
     <section id="keahlian" class="section">
         <h2 class="section-title">Keahlian Utama</h2>
         <h3 class="skill-subtitle">Konfigurasi Dasar</h3>
@@ -465,6 +475,7 @@
         </div>
     </section>
 
+    <!-- PROYEK SECTION -->
     <section id="proyek" class="section">
         <h2 class="section-title">Laporan Proyek & Praktikum</h2>
         <div class="projects-grid">
@@ -492,6 +503,7 @@
         </div>
     </section>
 
+    <!-- SERTIFIKAT SECTION -->
     <section id="sertifikat" class="section">
         <h2 class="section-title">Sertifikasi & Penghargaan</h2>
         <div class="certif-grid">
@@ -522,13 +534,15 @@
         </div>
     </section>
 
+    <!-- KONTAK SECTION -->
     <footer id="kontak">
         <h2>Mari Hubungi Saya</h2>
         <p>Terbuka untuk peluang magang (PKL), kerja sama tim, atau posisi IT Support / Junior Network Administrator.</p>
         <div class="kontak-links">
-            <a href="mailto:farisdzakiyya.kerja@gmail.com">Email</a>
-            
-            <a href="https://instagram.com/zky.faris" target="_blank">Instagram</a>
+            <!-- Ganti dengan email asli kamu -->
+            <a href="mailto:email_kamu@gmail.com">Email</a>
+            <!-- Ganti dengan username IG asli kamu -->
+            <a href="https://instagram.com/username_ig_kamu" target="_blank">Instagram</a>
         </div>
         <p class="copyright">&copy; 2026 Faris Dzakiyya. SMK - Teknik Jaringan Komputer dan Telekomunikasi.</p>
     </footer>
